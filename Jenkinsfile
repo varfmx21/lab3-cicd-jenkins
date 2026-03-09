@@ -6,8 +6,8 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = (env.BRANCH_NAME == 'main') ? 'nodemain' : 'nodedev'
-        APP_PORT   = (env.BRANCH_NAME == 'main') ? '3000' : '3001'
+        IMAGE_NAME = "${env.BRANCH_NAME == 'main' ? 'nodemain' : 'nodedev'}"
+        APP_PORT   = "${env.BRANCH_NAME == 'main' ? '3000' : '3001'}"
     }
 
     stages {
